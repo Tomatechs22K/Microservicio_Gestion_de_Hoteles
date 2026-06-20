@@ -98,6 +98,8 @@ cd ms-gateway    && mvn spring-boot:run
 ```bash
 # Test rápido desde el Gateway
 curl http://localhost:8080/api/hoteles
+curl http://localhost:8080/api/usuarios
+curl http://localhost:8080/api/clientes
 curl http://localhost:8080/api/habitaciones
 ```
 
