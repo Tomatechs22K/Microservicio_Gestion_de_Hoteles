@@ -57,6 +57,8 @@ Todas las peticiones se realizan a través del Gateway en `http://localhost:8080
 | Microservicio | URL Swagger |
 |---------------|-------------|
 | ms-hoteles | http://localhost:8081/swagger-ui/index.html |
+| ms-usuarios | http://localhost:8082/swagger-ui/index.html |
+| ms-clientes | http://localhost:8083/swagger-ui/index.html |
 | ms-habitaciones | http://localhost:8084/swagger-ui/index.html |
 
 ---
