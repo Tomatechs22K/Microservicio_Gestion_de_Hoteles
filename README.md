@@ -83,15 +83,17 @@ CREATE DATABASE habitaciones_db;
 Levanta cada microservicio en este orden desde IntelliJ o con Maven:
 
 ```bash
-# 1. Microservicios de negocio (cualquier orden)
-cd ms-usuarios   && mvn spring-boot:run
-cd ms-clientes   && mvn spring-boot:run
-cd ms-hoteles    && mvn spring-boot:run
+# 1. Servidor de Descubrimiento (DEBE ir primero para que los demás puedan registrarse)
+cd ms-eureka-server && mvn spring-boot:run
+
+# 2. Microservicios de negocio (esperar a que Eureka esté arriba)
+cd ms-usuarios     && mvn spring-boot:run
+cd ms-clientes     && mvn spring-boot:run
+cd ms-hoteles      && mvn spring-boot:run
 cd ms-habitaciones && mvn spring-boot:run
 
-# 2. Gateway (último, una vez que los demás estén activos)
-cd ms-gateway    && mvn spring-boot:run
-```
+# 3. Gateway (último, para que descubra las rutas registradas en Eureka)
+cd ms-gateway      && mvn spring-boot:run
 
 ### Verificar que todo funciona
 
